@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @loan_detail.key_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @loan_detail.start_date %>
+</p>
+
+<p>
+  <strong>Return date:</strong>
+  <%= @loan_detail.return_date %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @loan_detail.grade %>
+</p>
+
+<p>
+  <strong>Class number:</strong>
+  <%= @loan_detail.class_number %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @loan_detail.user_name %>
+</p>
+
+<%= link_to 'Edit', edit_loan_detail_path(@loan_detail) %> |
+<%= link_to 'Back', loan_details_path %>
