@@ -1,0 +1,27 @@
+<%= form_with(model: key_master) do |form| %>
+  <% if key_master.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(key_master.errors.count, "error") %> prohibited this key_master from being saved:</h2>
+
+      <ul>
+        <% key_master.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :room_name %>
+    <%= form.text_field :room_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :management_room %>
+    <%= form.text_field :management_room %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
