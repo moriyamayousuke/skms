@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room name:</strong>
+  <%= @key_master.room_name %>
+</p>
+
+<p>
+  <strong>Management room:</strong>
+  <%= @key_master.management_room %>
+</p>
+
+<%= link_to 'Edit', edit_key_master_path(@key_master) %> |
+<%= link_to 'Back', key_masters_path %>
