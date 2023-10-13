@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  key_id: 1
+  start_date: 2023-10-11 12:12:38
+  return_date: 2023-10-11 12:12:38
+  grade: 1
+  class_number: 1
+  user_name: MyString
+
+two:
+  key_id: 1
+  start_date: 2023-10-11 12:12:38
+  return_date: 2023-10-11 12:12:38
+  grade: 1
+  class_number: 1
+  user_name: MyString

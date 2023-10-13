@@ -1,0 +1,2 @@
+class KeyMaster < ApplicationRecord
+end
