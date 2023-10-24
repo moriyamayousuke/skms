@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grade</th>
+      <th>Class number</th>
+      <th>User name</th>
+      <th>Start date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usbs.each do |usb| %>
+      <tr>
+        <td><%= usb.grade %></td>
+        <td><%= usb.class_number %></td>
+        <td><%= usb.user_name %></td>
+        <td><%= usb.start_date %></td>
+        <td><%= link_to 'Show', usb %></td>
+        <td><%= link_to 'Edit', edit_usb_path(usb) %></td>
+        <td><%= link_to 'Destroy', usb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usb', new_usb_path %>

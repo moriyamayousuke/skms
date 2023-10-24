@@ -6,29 +6,29 @@
 </p>
 
 <p>
-  <strong>Start date:</strong>
+  <strong>借りた時間:</strong>
   <%= @loan_detail.start_date %>
 </p>
 
 <p>
-  <strong>Return date:</strong>
+  <strong>返した時間:</strong>
   <%= @loan_detail.return_date %>
 </p>
 
 <p>
-  <strong>Grade:</strong>
+  <strong>学年:</strong>
   <%= @loan_detail.grade %>
 </p>
 
 <p>
-  <strong>Class number:</strong>
+  <strong>組:</strong>
   <%= @loan_detail.class_number %>
 </p>
 
 <p>
-  <strong>User name:</strong>
+  <strong>名前:</strong>
   <%= @loan_detail.user_name %>
 </p>
 
-<%= link_to 'Edit', edit_loan_detail_path(@loan_detail) %> |
+<%= link_to '編集', edit_loan_detail_path(@loan_detail) %> |
 <%= link_to 'Back', loan_details_path %>

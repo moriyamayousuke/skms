@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_11_031238) do
+ActiveRecord::Schema.define(version: 2023_10_20_054626) do
 
   create_table "key_masters", force: :cascade do |t|
     t.string "room_name"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2023_10_11_031238) do
     t.integer "grade"
     t.integer "class_number"
     t.string "user_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "usbs", force: :cascade do |t|
+    t.integer "grade"
+    t.integer "class_number"
+    t.string "user_name"
+    t.datetime "start_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
