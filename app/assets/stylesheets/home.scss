@@ -5,7 +5,14 @@ body{
     background-color: aqua;
 }
 h1{
-    color: aqua;
+    color: red;
+    font-size:40px;
+    font-family: 'Shippori Mincho B1', serif;
+    text-shadow:
+    1px 1px 0px #000, -1px -1px 0px #000,
+   -1px 1px 0px #000,  1px -1px 0px #000,
+    1px 0px 0px #000, -1px  0px 0px #000,
+    0px 1px 0px #000,  0px -1px 0px rgb(0, 0, 0);
 }
 .map_wrap{
     text-align:center;
