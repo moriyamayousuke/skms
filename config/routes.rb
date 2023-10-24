@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usbs
   get 'home/top'
   root to:'home#top'
   get 'home/room'

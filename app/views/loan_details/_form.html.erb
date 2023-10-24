@@ -1,4 +1,5 @@
 <%= form_with(model: loan_detail) do |form| %>
+<div class ="outer">
   <% if loan_detail.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
@@ -12,36 +13,37 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :key_id %>
+    <%= form.label "鍵" %>
     <%= form.number_field :key_id %>
   </div>
 
   <div class="field">
-    <%= form.label :start_date %>
+    <%= form.label "借りた時間" %>
     <%= form.datetime_select :start_date %>
   </div>
 
   <div class="field">
-    <%= form.label :return_date %>
+    <%= form.label "返した時間" %>
     <%= form.datetime_select :return_date %>
   </div>
 
   <div class="field">
-    <%= form.label :grade %>
+    <%= form.label"学年" %>
     <%= form.number_field :grade %>
   </div>
 
   <div class="field">
-    <%= form.label :class_number %>
+    <%= form.label "組" %>
     <%= form.number_field :class_number %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name %>
-  </div>
+    <div class="field">
+     <%= form.label "名前" %>
+     <%= form.text_field :user_name %>
+     </div>  
 
-  <div class="actions">
-    <%= form.submit %>
+   <div class="actions">
+     <%= form.submit %>
+    </div>
   </div>
 <% end %>
