@@ -8,21 +8,26 @@ class LoanDetailsController < ApplicationController
 
   # GET /loan_details/1 or /loan_details/1.json
   def show
+
   end
 
   # GET /loan_details/new
   def new
     @loan_detail = LoanDetail.new
+    @key_masters = KeyMaster.all
   end
 
   # GET /loan_details/1/edit
   def edit
+    @key_masters = KeyMaster.all
+
+
   end
 
   # POST /loan_details or /loan_details.json
   def create
     @loan_detail = LoanDetail.new(loan_detail_params)
-
+    @loan_detail[:start_date] = Time.now
     respond_to do |format|
       if @loan_detail.save
         format.html { redirect_to loan_detail_url(@loan_detail), notice: "Loan detail was successfully created." }
@@ -36,6 +41,7 @@ class LoanDetailsController < ApplicationController
 
   # PATCH/PUT /loan_details/1 or /loan_details/1.json
   def update
+    @loan_detail[:return_date] = Time.now
     respond_to do |format|
       if @loan_detail.update(loan_detail_params)
         format.html { redirect_to loan_detail_url(@loan_detail), notice: "Loan detail was successfully updated." }
@@ -65,6 +71,6 @@ class LoanDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def loan_detail_params
-      params.require(:loan_detail).permit(:key_id, :start_date, :return_date, :grade, :class_number, :user_name)
+      params.require(:loan_detail).permit(:key_master_id, :start_date, :return_date, :grade, :class_number, :user_name)
     end
 end

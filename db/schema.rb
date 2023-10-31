@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_054626) do
   end
 
   create_table "loan_details", force: :cascade do |t|
-    t.integer "key_id"
+    t.integer "key_master_id"
     t.datetime "start_date"
     t.datetime "return_date"
     t.integer "grade"

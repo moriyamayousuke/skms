@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Loan Details</h1>
+<h1>貸出一覧</h1>
 <%# 返却状況 %>
 <table>
   <thead>
@@ -18,7 +18,7 @@
   <tbody>
     <% @loan_details.each do |loan_detail| %>
       <tr>
-        <td><%= loan_detail.key_id %></td>
+        <td><%= loan_detail.key_master.room_name %></td>
         <td><%= loan_detail.start_date %></td>
         <td><%= loan_detail.return_date %></td>
         <td><%= loan_detail.grade %></td>
@@ -26,7 +26,7 @@
         <td><%= loan_detail.user_name %></td>
         <td><%= link_to 'Show', loan_detail %></td>
         <td><%= link_to 'Edit', edit_loan_detail_path(loan_detail) %></td>
-        <td><%= link_to 'Destroy', loan_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', loan_detail, method: :delete, data: { confirm: 'ほんとにいいの?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Loan Detail', new_loan_detail_path %>
+<%= link_to '借りる', new_loan_detail_path %>
