@@ -1,51 +1,56 @@
-<%= form_with(model: loan_detail) do |form| %>
-<div class ="outer">
-  <% if loan_detail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
+<div class ="wrap">
+  <%= form_with(model: loan_detail) do |form| %>
+  <div class ="outer">
+    <% if loan_detail.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
 
-      <ul>
-        <% loan_detail.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label "部屋名" %>
-    <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name) %>
-  </div>
-  
-
-  <!--<div class="field">
-    <%= form.label "借りた時間" %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label "返した時間" %>
-    <%= form.datetime_select :return_date %>
-  </div>-->
-
-  <div class="field">
-    <%= form.label"学年" %>
-    <%= form.number_field :grade,in: 1..3 %>
-  </div>
-
-  <div class="field">
-    <%= form.label "組" %>
-    <%= form.number_field :class_number,in: 1..4 %>
-  </div>
+        <ul>
+          <% loan_detail.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="field">
-     <%= form.label "名前" %>
-     <%= form.text_field :user_name %>
-     </div>  
-
-   <div class="actions">
-     <%= form.submit "借りる"%>
+      <%= form.label "部屋名" %>
+      <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name) %>
     </div>
-  </div>
-  
-<% end %>
+    
+
+    <!--<div class="field">
+      <%= form.label "借りた時間" %>
+      <%= form.datetime_select :start_date %>
+    </div>
+
+    <div class="field">
+      <%= form.label "返した時間" %>
+      <%= form.datetime_select :return_date %>
+    </div>-->
+    <div class ="grade_box">
+      <div class="field">
+        <%= form.label"学年" %>
+        <%= form.number_field :grade,in: 1..3 %>
+      </div>
+
+      <div class="field">
+        <%= form.label "組" %>
+        <%= form.number_field :class_number,in: 1..4 %>
+      </div>
+    </div>
+
+      <div class="field">
+      <%= form.label "名前" %>
+      <%= form.text_field :user_name %>
+      </div>  
+
+    <div class="actions" >
+    <div class= "bottom_lent">
+      <%= form.submit "借りる"%>
+      </div>
+      </div> 
+    </div>
+    
+  <% end %>
+</div>

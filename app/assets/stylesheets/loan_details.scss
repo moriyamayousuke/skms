@@ -1,12 +1,16 @@
 // Place all the styles related to the loan_details controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// .wrap{}
 .outer{
     text-align: center;
     background-color:whitesmoke;
     border-style:solid;
     border-color:darkgray;
     border-width:3px;
+    margin-top: 50px;
+    margin-right: 300px;
+    margin-left:  300px;
 }
 .field{
     font-size: 35px;
@@ -31,4 +35,48 @@ table{
     border-style:solid;
     border-color:darkgray;
     border-width:3px;
+}
+// lone_detailsのところ----------------------------------------
+.details_edit p{
+    font-size: 35px;
+}
+.details_edit .outer{
+    background-color: red;
+    padding: 80px;
+}
+.details_edit .actions{
+    background-color:whitesmoke;
+    border-style:solid;
+    border-color:darkgray;
+    padding: 50px;
+    border-width:3px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.bottom_lent{
+    margin-top: 50px;
+    
+}
+.bottom_back{
+    background-color:whitesmoke;
+    border-style:solid;
+    border-color:darkgray;
+    padding: 20px;
+    margin: 80px;
+    border-width:3px;
+    margin: 25px auto;
+    width: 60px;
+    height:10px;
+}
+.bottom_back a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    padding: 5px;
+}
+.grade_box{
+    display: flex;
+    justify-content: space-between;
 }
