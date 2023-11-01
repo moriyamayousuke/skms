@@ -1,42 +1,34 @@
-<%= form_with(model: loan_detail) do |form| %>
-<div class ="outer">
-  <% if loan_detail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
+<id class = "details_edit">
+  <%= form_with(model: loan_detail) do |form| %>
+  <div class ="outer">
+    <% if loan_detail.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
 
-      <ul>
-        <% loan_detail.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% loan_detail.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= "部屋名：" %>
+      <%= @key_masters.find(@loan_detail.key_master_id).room_name %>
     </div>
+
+    <div class="field">
+      <p>鍵責任者</p>
+      <%= @loan_detail.grade %><%= "年" %>
+      <%= @loan_detail.class_number %><%= "組" %>
+      <%= @loan_detail.user_name%><% "名前" %>
+      </div>  
+    </div>
+    <div class="actions">
+      <%= form.submit "返却する" %>
+    </div>
+
+    
   <% end %>
-
-  <div class="field">
-    <%= "部屋名：" %>
-    <%= @key_masters.find(@loan_detail.key_master_id).room_name %>
-  </div>
-  
-
-  <!--<div class="field">
-    <%= form.label "借りた時間" %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label "返した時間" %>
-    <%= form.datetime_select :return_date %>
-  </div>-->
-
-  <div class="field">
-    <%= @loan_detail.grade %><%= "年" %>
-    <%= @loan_detail.class_number %><%= "組" %>
-     <%= @loan_detail.user_name%><% "名前" %>
-     </div>  
-
-   <div class="actions">
-     <%= form.submit "返却する" %>
-    </div>
-  </div>
-  
-<% end %>
+</id>
