@@ -1,3 +1,4 @@
+
 <%= form_with(model: loan_detail) do |form| %>
 <div class ="outer">
   <% if loan_detail.errors.any? %>
@@ -17,20 +18,17 @@
     <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name) %>
   </div>
   
-
-  <!--<div class="field">
-    <%= form.label "借りた時間" %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
   <div class="field">
-    <%= form.label "返した時間" %>
-    <%= form.datetime_select :return_date %>
-  </div>-->
+    <%= form.label"学年" %>    
+    <%= "1"%>   
+    <%= "2"%>
+    <%= "3"%>
 
-  <div class="field">
-    <%= form.label"学年" %>
-    <%= form.number_field :grade,in: 1..3 %>
+    <div class="radio">
+      <%= form.radio_button :grade,1,checked: true%>
+      <%= form.radio_button :grade,2%>     
+      <%= form.radio_button :grade,3%>
+    </div>
   </div>
 
   <div class="field">
@@ -49,3 +47,4 @@
   </div>
   
 <% end %>
+</div>
