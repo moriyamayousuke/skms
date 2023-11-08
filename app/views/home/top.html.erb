@@ -4,9 +4,19 @@
     <h1>利用状況</h1>
 
     <div class="map_wrap">
-        <div class="map1"><%= image_tag '1_map.jpg'%></div>
-         <div class="map2"><%= image_tag '2_map.jpg'%></div>
-         <div class="map3"><%= image_tag '3_map.jpg'%></div>
+        <div class="map1"><%= image_tag '1_map.png' %></div>
+         <div class="map2"><%= image_tag '2_map.png',usemap: "#ImageMap2"%>
+            <map name="ImageMap2">
+                <area shape="rect" coords="1034,54,1177,149" href="https://www.city.izumo.shimane.jp/www/index.html" alt="" />
+                <area shape="rect" coords="1301,54,1488,146" href="https://chrome.google.com/webstore/category/extensions?hl=ja" alt="" />
+            </map>
+         </div>
+         <div class="map3"><%= image_tag '3_map.jpg',usemap: "#ImageMap3"%>
+            <map name="#ImageMap3">
+                <area shape="rect" coords="707,118,897,185" href="https://railsdoc.com/page/image_tag" alt="" />
+                <area shape="rect" coords="896,117,1069,183" href="https://stackoverflow.com/questions/11067326/rails-image-tag-and-usemap-not-playing-nice-with-firefox" alt="" />
+            </map>
+         </div>
     </div>
     <p>Find me in app/views/home/top.html.erb</p>
 </body>
