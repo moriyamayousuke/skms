@@ -41,9 +41,8 @@ class LoanDetailsController < ApplicationController
 
   # PATCH/PUT /loan_details/1 or /loan_details/1.json
   def update
-    @loan_detail[:return_date] = Time.now
     respond_to do |format|
-      if @loan_detail.update(loan_detail_params)
+      if @loan_detail.update(return_date: Time.now)
         format.html { redirect_to loan_detail_url(@loan_detail), notice: "Loan detail was successfully updated." }
         format.json { render :show, status: :ok, location: @loan_detail }
       else
@@ -71,6 +70,6 @@ class LoanDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def loan_detail_params
-      params.require(:loan_detail).permit(:key_master_id, :start_date, :return_date, :grade, :class_number, :user_name)
+         params.require(:loan_detail).permit(:key_master_id, :start_date, :return_date, :grade, :class_number, :user_name)
     end
 end
