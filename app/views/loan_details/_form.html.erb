@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e11052c4072f7a4188e7766bcdd1cffb7a14ef48
 <div class ="wrap">
   <%= form_with(model: loan_detail) do |form| %>
   <div class ="outer">
     <% if loan_detail.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(loan_detail.errors.count, "error") %> prohibited this loan_detail from being saved:</h2>
+        <h2>エラー！</h2>
 
         <ul>
           <% loan_detail.errors.each do |error| %>
