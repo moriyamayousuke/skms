@@ -14,7 +14,9 @@ class LoanDetailsController < ApplicationController
   # GET /loan_details/new
   def new
     @loan_detail = LoanDetail.new
-
+    if params[:key_id].present?
+      @loan_detail.key_master_id = params[:key_id]
+    end
   end
 
   # GET /loan_details/1/edit
