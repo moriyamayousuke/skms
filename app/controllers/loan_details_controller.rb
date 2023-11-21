@@ -1,6 +1,6 @@
 class LoanDetailsController < ApplicationController
   before_action :set_loan_detail, only: %i[ show edit update destroy ]
-
+  before_action :set_key_masters, only: [:new, :create, :edit, :update]
   # GET /loan_details or /loan_details.json
   def index
     @loan_details = LoanDetail.all
@@ -14,12 +14,14 @@ class LoanDetailsController < ApplicationController
   # GET /loan_details/new
   def new
     @loan_detail = LoanDetail.new
-    @key_masters = KeyMaster.all
+    if params[:key_id].present?
+      @loan_detail.key_master_id = params[:key_id]
+    end
   end
 
   # GET /loan_details/1/edit
   def edit
-    @key_masters = KeyMaster.all
+
 
 
   end
@@ -66,6 +68,10 @@ class LoanDetailsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_loan_detail
       @loan_detail = LoanDetail.find(params[:id])
+    end
+
+    def set_key_masters
+      @key_masters = KeyMaster.all
     end
 
     # Only allow a list of trusted parameters through.

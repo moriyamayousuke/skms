@@ -26,7 +26,7 @@
         <td><%= loan_detail.user_name %></td>
         <td><%= link_to '閲覧', loan_detail %></td>
         <td><%= link_to '返す', edit_loan_detail_path(loan_detail) %></td>
-        <td><%= link_to '削除', loan_detail, method: :delete, data: { confirm: 'ほんとにいいの?' } %></td>
+        <td><%= button_to '削除', loan_detail, method: :delete, data: { confirm: 'ほんとにいいの?' } %></td>
       </tr>
     <% end %>
   </tbody>
