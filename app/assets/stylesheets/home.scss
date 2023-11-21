@@ -1,11 +1,22 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-body{
-    background-color: aqua;
+.wrap{
+    color: #333;
+    margin: 33px;
 }
+tbody{
+    margin: 80px;
+}
+body{
+    min-height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;}
+
 h1{
     float: left;
+    margin-left:100px ;
     width:230px;
     height:auto;
     color: red;
