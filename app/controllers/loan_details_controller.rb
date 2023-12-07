@@ -1,6 +1,14 @@
 class LoanDetailsController < ApplicationController
   before_action :set_loan_detail, only: %i[ show edit update destroy ]
   before_action :set_key_masters, only: [:new, :create, :edit, :update]
+  before_action :basic_auth, only: [:index]
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |user,pass|
+      user == "a" && "a"
+    end
+  end
+
   # GET /loan_details or /loan_details.json
   def index
     @loan_details = LoanDetail.all
@@ -78,4 +86,5 @@ class LoanDetailsController < ApplicationController
     def loan_detail_params
          params.require(:loan_detail).permit(:key_master_id, :start_date, :return_date, :grade, :class_number, :user_name)
     end
+    
 end
