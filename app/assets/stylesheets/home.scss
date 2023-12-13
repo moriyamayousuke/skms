@@ -43,3 +43,11 @@ h1{
     padding:5%;
     background-color: none;
 }
+
+.map1 p{
+    display: none;
+}
+.map1 map:hover + p {
+    display: block;
+}
+

@@ -11,7 +11,7 @@ class LoanDetailsController < ApplicationController
 
   # GET /loan_details or /loan_details.json
   def index
-    @loan_details = LoanDetail.all
+    @loan_details = LoanDetail.all.order(id: :desc)
   end
 
   # GET /loan_details/1 or /loan_details/1.json
@@ -41,6 +41,7 @@ class LoanDetailsController < ApplicationController
     @loan_detail[:start_date] = Time.now
     respond_to do |format|
       if @loan_detail.save
+
         format.html { redirect_to root_path, notice: "Skms was successfully created." }
         format.json { render :show, status: :created, location: @loan_detail }
       else
