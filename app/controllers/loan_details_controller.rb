@@ -5,7 +5,8 @@ class LoanDetailsController < ApplicationController
 
   def basic_auth
     authenticate_or_request_with_http_basic do |user,pass|
-      user == "a" && "a"
+      user == "a" && pass == "a"
+
     end
   end
 
