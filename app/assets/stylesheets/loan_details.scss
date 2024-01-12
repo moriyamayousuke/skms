@@ -9,14 +9,19 @@
     border-style:solid;
 
     border-width:3px;
-    margin-top: 50px;
-    margin-right: 500px;
-    margin-left:  500px;
+    margin:auto;
+    // margin-top: 50px;
+    // margin-right: 500px;
+    // margin-left:  500px;
     border:solid 3px;
     border-color:#8a8a8a;
 }
+.room_name{
+    width:20vw;
+    text-align: center;
+}
 .field{
-    font-size: 35px;
+    font-size: 30px;
     margin:50px;
 }
 select{
@@ -58,8 +63,10 @@ label{
 }
 .details_edit .outer{
 
-    background:#525151;
-    padding: 80px;
+    background-color:#525151;
+    margin-top:2.5%;
+    padding:5%;
+    width:50%;
 }
 .details_edit .actions{  
     padding: 50px;
@@ -70,16 +77,48 @@ label{
 table{
     text-align: center;
 }
+.index_color a{
+    color:black;
+}
 .wrap .outer{
     background-color:#525151;
+    width:50%;
 }
-
+input[type="submit"].return_btn{
+    font-size:300%;
+    font-weight: bold;
+    width:70%;
+    padding:10%;
+    margin:5%;
+    background-color: #ff7171;
+    border-radius: 20px;
+    color:#ffffff;
+}
+input[type="submit"].borrow_btn{
+    font-size:300%;
+    font-weight: bold;
+    width:50%;
+    padding:6%;
+    margin:10%;
+    background-color: #ff7171;
+    border-radius: 20px;
+    color:#ffffff;
+}
 button{
+    color:#ffffff;
     display: block;
+    font-size:300%;
+    font-weight: bold;
     margin: 50px auto;
     background-color:#ff7171;
-
+    border-radius: 20px;
+    padding:2.5%;
+    width:20%;
 }
+button a{
+    color:#ffffff;
+}
+
 .btn{
     text-align: center;
     padding: 10px 20px;

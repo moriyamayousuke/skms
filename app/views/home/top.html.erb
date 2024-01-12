@@ -3,7 +3,7 @@
 
 <body>
     <h1>利用状況</h1>
-    <%= link_to '教員用ログイン', loan_details_path%>
+    <%= link_to '教員用ログイン', loan_details_path, class: "log_btn"%>
 
     <div class="map_wrap">
         <div class="map1"><%= image_tag '1_map.png',usemap:"#ImageMap1" %>
@@ -12,7 +12,6 @@
                 <area shape="rect" coords="541,273,610,335" href="http://localhost:3000/loan_details/new?key_id=6" alt="" />
                 <area shape="rect" coords="692,273,760,333" href="http://localhost:3000/loan_details/new?key_id=7" alt="" />
             </map>
-            <p>ほぼあーーーー</p>
         </div>
         <% if a == 1 %>
          <div class="map2"><%= image_tag '2_map.png',usemap: "#ImageMap2"%>

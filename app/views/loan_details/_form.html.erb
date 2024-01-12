@@ -14,9 +14,11 @@
           </div>
         <% end %>
 
+
         <div class="field">
+        <%# <div class = "col-12 col-xl-2 col-md-3"> %>
           <%= form.label "部屋名" %>
-          <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name) %>
+          <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name, {}, {class: 'room_name'}) %>
         </div>
         
 
@@ -49,8 +51,8 @@
               <%= form.label "名前" %>
               <%= form.text_field :user_name %>
             </div>  
-            <div class="btn-lent">
-              <%= form.submit "借りる"%>
+            <div class="return_btn">
+              <%= form.submit "借りる", class: "borrow_btn" %>
             </div>
           
         <% end %>
