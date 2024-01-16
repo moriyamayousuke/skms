@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div cass="call">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Key:</strong>
-  <%= @loan_detail.key_master_id %>
-</p>
+  <p>
+    <strong>Key:</strong>
+    <%= @loan_detail.key_master_id %>
+  </p>
 
-<p>
-  <strong>借りた時間:</strong>
-  <%= @loan_detail.start_date %>
-</p>
+  <p>
+    <strong>借りた時間:</strong>
+    <%= @loan_detail.start_date %>
+  </p>
 
-<p>
-  <strong>返した時間:</strong>
-  <%= @loan_detail.return_date %>
-</p>
+  <p>
+    <strong>返した時間:</strong>
+    <%= @loan_detail.return_date %>
+  </p>
 
-<p>
-  <strong>学年:</strong>
-  <%= @loan_detail.grade %>
-</p>
+  <p>
+    <strong>学年:</strong>
+    <%= @loan_detail.grade %>
+  </p>
 
-<p>
-  <strong>組:</strong>
-  <%= @loan_detail.class_number %>
-</p>
+  <p>
+    <strong>組:</strong>
+    <%= @loan_detail.class_number %>
+  </p>
 
-<p>
-  <strong>名前:</strong>
-  <%= @loan_detail.user_name %>
-</p>
+  <p>
+    <strong>名前:</strong>
+    <%= @loan_detail.user_name %>
+  </p>
 
-<%= link_to '編集', edit_loan_detail_path(@loan_detail) %> |
-<%= link_to '戻る', loan_details_path %>
+  <%= link_to '編集', edit_loan_detail_path(@loan_detail) %> |
+  <%= link_to '戻る', loan_details_path %>
+</div>

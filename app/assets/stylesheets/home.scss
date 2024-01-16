@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .wrap{
     color: #333;
-    margin: 33px;
+    margin-right: 33px;
+    margin-left: 33px;
 }
 tbody{
     margin: 80px;
@@ -11,15 +12,16 @@ tbody{
 body{
     min-height: 100vh;
     margin: 0;
-    background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
-    background-blend-mode: multiply;}
+    background-image: url(../images/28302174_s.jpg);
+    background-repeat: repeat-y;
+}
 
 h1{
     float: left;
     margin-left:100px ;
     width:230px;
     height:auto;
-    color: red;
+    color:gold;
     font-size:40px;
     font-family: 'Shippori Mincho B1', serif;
     text-shadow:
@@ -43,3 +45,21 @@ h1{
     padding:5%;
     background-color: none;
 }
+.call{
+    text-align: center;
+    background-color: darkgray;
+}
+#map {
+    svg {
+      a {
+        path {
+          transition: fill 0.3s linear;
+        }
+        &:hover {
+          path {
+            fill: #ffce00;
+          }
+        }
+      }
+    }
+  }
