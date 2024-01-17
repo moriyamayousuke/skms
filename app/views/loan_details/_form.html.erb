@@ -5,7 +5,6 @@
         <% if loan_detail.errors.any? %>
           <div id="error_explanation">
             <h2>エラー！</h2>
-
             <ul>
               <% loan_detail.errors.each do |error| %>
                 <li><%= error.full_message %></li>
@@ -13,34 +12,38 @@
             </ul>
           </div>
         <% end %>
-
         <div class="field">
+        <%# <div class = "col-12 col-xl-2 col-md-3"> %>
           <%= form.label "部屋名" %>
-          <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name) %>
+          <%= form.collection_select(:key_master_id, @key_masters, :id, :room_name, {}, {class: 'room_name'}) %>
         </div>
-  
+          <!--<div class="field">
+            <%= form.label "借りた時間" %>
+            <%= form.datetime_select :start_date %>
+          </div>
+          <div class="field">
+            <%= form.label "返した時間" %>
+            <%= form.datetime_select :return_date %>
+          </div>-->
           <div class = "select_box">
             <div class ="grade_box">
               <div class="field">
                 <%= form.label"学年" %>
                 <%= form.select :grade, [1,2,3] %>
               </div>
-
               <div class="field">
                 <%= form.label "組" %>
                 <%= form.select :class_number, [1,2,3,4] %>
               </div>
             </div>
           </div>
-
             <div class="field">
               <%= form.label "名前" %>
               <%= form.text_field :user_name %>
-            </div>  
-            <div class="btn-lent">
-              <%= form.submit "借りる"%>
             </div>
-          
+            <div class="return_btn">
+              <%= form.submit "借りる", class: "borrow_btn" %>
+            </div>
         <% end %>
       </div>
   </div>

@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Room name:</strong>
+<div class="box">
+<div class="field">
+  <%= "部屋名：" %>
   <%= @key_master.room_name %>
-</p>
+</div>
 
-<p>
-  <strong>Management room:</strong>
+<div class="field">
+  <%= "借りられる場所：" %>
   <%= @key_master.management_room %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_key_master_path(@key_master) %> |
-<%= link_to 'Back', key_masters_path %>
+<div class="field">
+  <%= rent(@key_master.loan_details) %>
+</div>
+</div>
+<button type ="button" class = "btn">
+    <%= link_to '戻る', home_student_top_path %>
+</button>
+

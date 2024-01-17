@@ -1,14 +1,24 @@
 class LoanDetailsController < ApplicationController
   before_action :set_loan_detail, only: %i[ show edit update destroy ]
   before_action :set_key_masters, only: [:new, :create, :edit, :update]
+  before_action :basic_auth, only: [:index]
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |user,pass|
+      user == "a" && pass == "a"
+
+    end
+  end
+
   # GET /loan_details or /loan_details.json
   def index
-    @loan_details = LoanDetail.all
+    @loan_details = LoanDetail.all.order(id: :desc)
   end
 
   # GET /loan_details/1 or /loan_details/1.json
   def show
-
+    @loan_detail = LoanDetail.new
+    @loan_detail.key_master_id = params[:key_id]
   end
 
   # GET /loan_details/new
@@ -32,7 +42,8 @@ class LoanDetailsController < ApplicationController
     @loan_detail[:start_date] = Time.now
     respond_to do |format|
       if @loan_detail.save
-        format.html { redirect_to loan_detail_url(@loan_detail), notice: "Loan detail was successfully created." }
+
+        format.html { redirect_to root_path, notice: "Skms was successfully created." }
         format.json { render :show, status: :created, location: @loan_detail }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,8 +56,8 @@ class LoanDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @loan_detail.update(return_date: Time.now)
-        format.html { redirect_to loan_detail_url(@loan_detail), notice: "Loan detail was successfully updated." }
-        format.json { render :show, status: :ok, location: @loan_detail }
+        format.html { redirect_to root_path, notice: "Skms was successfully created." }
+        format.json { render :show, status: :created, location: @loan_detail }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @loan_detail.errors, status: :unprocessable_entity }
@@ -58,10 +69,7 @@ class LoanDetailsController < ApplicationController
   def destroy
     @loan_detail.destroy
 
-    respond_to do |format|
-      format.html { redirect_to loan_details_url, notice: "Loan detail was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to 'http://localhost:3000'
   end
 
   private
@@ -78,4 +86,5 @@ class LoanDetailsController < ApplicationController
     def loan_detail_params
          params.require(:loan_detail).permit(:key_master_id, :start_date, :return_date, :grade, :class_number, :user_name)
     end
+    
 end

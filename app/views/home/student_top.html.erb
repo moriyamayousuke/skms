@@ -1,0 +1,38 @@
+<% a = 1 %>
+<html>
+
+<body>
+    <h1>生徒利用状況</h1>
+    
+
+    <div class="map_wrap">
+        <div class="map1"><%= image_tag '1_map.png',usemap:"#ImageMap1" %>
+            <map name="#ImageMap1">
+                <area shape="rect" coords="474,275,541,335" href="http://localhost:3000/key_masters/5" alt="" />
+                <area shape="rect" coords="541,273,610,335" href="http://localhost:3000/key_masters/6" alt="" />
+                <area shape="rect" coords="692,273,760,333" href="http://localhost:3000/key_masters/7" alt="" />
+            </map>
+            <p>ほぼあーーーー</p>
+        </div>
+        <% if a == 1 %>
+         <div class="map2"><%= image_tag '2_map.png',usemap: "#ImageMap2"%>
+            <map name="#ImageMap2">
+                <area shape="rect" coords="564,304,637,366" href="http://localhost:3000/key_masters/8" alt="" style="background-color:aqua;" />
+                <area shape="rect" coords="722,45,823,127" href="http://localhost:3000/key_masters/2" alt="" />
+                <area shape="rect" coords="909,44,1037,125" href="http://localhost:3000/key_masters/3" alt="" />
+                <area shape="rect" coords="1137,123,1196,268" href="http://localhost:3000/key_masters/10" alt="" />
+            </map>
+         </div>
+        <% end %>
+         <div class="map3"><%= image_tag '3_map.png',usemap: "#ImageMap3" %>
+            <map name="#ImageMap3">
+            <area shape="rect" coords="707,118,896,184" href="http://localhost:3000/key_masters/4" alt="" />
+            <area shape="rect" coords="896,116,1068,183" href="http://localhost:3000/key_masters/1" alt="" />
+            <!--<area shape="rect" coords="476,335,550,402" href="http://localhost:3000/loan_details/new?key_id=10" alt="" />-->
+            <area shape="rect" coords="708,332,783,386" href="http://localhost:3000/key_masters/9" alt="" />
+            </map>
+        </div>
+    </div>
+    <p>Find me in app/views/home/top.html.erb</p>
+</body>
+</html>

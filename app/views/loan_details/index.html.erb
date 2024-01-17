@@ -2,7 +2,7 @@
 
 <h1>貸出一覧</h1>
 <%# 返却状況 %>
-<table class =design_table>
+<table class ="design_table table table-hover">
   <thead>
     <tr>
       <th>key</th>
@@ -24,15 +24,10 @@
         <td><%= loan_detail.grade %></td>
         <td><%= loan_detail.class_number %></td>
         <td><%= loan_detail.user_name %></td>
-        <td><%= link_to '閲覧', loan_detail %></td>
-        <td><%= link_to '返す', edit_loan_detail_path(loan_detail) %></td>
+        <td class="index_color"><%= link_to '閲覧', loan_detail %></td>
+        <td class="index_color"><%= link_to '返す', edit_loan_detail_path(loan_detail) %></td>
         <td><%= button_to '削除', loan_detail, method: :delete, data: { confirm: 'ほんとにいいの?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-<button type ="button" class = "btn">
-  <%= link_to '借りる', new_loan_detail_path %>
-</button>

@@ -24,13 +24,15 @@
       <%= @loan_detail.grade %><%= "年" %>
       <%= @loan_detail.class_number %><%= "組" %>
       <%= @loan_detail.user_name%><% "名前" %>
-      </div>  
     </div>
-    <div class="actions">
-      <%= form.submit "返却する" %>
-    </div>
-    
 
-    
+    <div class=" text-center">
+      <%= form.submit "返却する", class: "return_btn" %>
+    </div>
+  </div>
+    <button type ="button">
+      <%= link_to '戻る', loan_details_path %>
+    </button>
+
   <% end %>
 </div>
