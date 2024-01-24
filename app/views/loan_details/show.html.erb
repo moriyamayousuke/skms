@@ -1,13 +1,11 @@
 <div class = "details_edit">
 
 
-
+    <div class ="outer">
     <div class="field">
       <%= "部屋名：" %>
       <%= @key_masters.find(@loan_detail.key_master_id).room_name %>
     </div>
-
-
     <div class="field">
       <p>鍵責任者</p>
       <%= @loan_detail.grade %><%= "年" %>
@@ -15,13 +13,8 @@
       <%= @loan_detail.user_name%><% "名前" %>
       </div>  
     </div>
-    <div class="actions">
-      <%= form.submit "返却する" %>
     </div>
-    
-
-    
-
 </div>
-<%= link_to '編集', edit_loan_detail_path(@loan_detail) %> |
-<%= link_to '戻る', loan_details_path %>
+<button type ="button">
+<%= link_to '戻る', home_student_top_path %>
+</button>

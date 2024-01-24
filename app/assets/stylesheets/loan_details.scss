@@ -14,6 +14,38 @@
     border:solid 3px;
     border-color:#8a8a8a;
 }
+.possible{
+    margin:auto;
+    text-align:center;
+    color:#ffffff;
+    border-style:solid;
+    border:solid 3px;
+    border-color:#8a8a8a;
+    background-color:#525151;
+    margin-top:2.5%;
+    width:60%;
+    padding-top:5%;
+    padding-bottom:5%;
+}
+.possible p{
+    font-size:30px;
+    padding:auto;
+}
+.possible_a{
+    display:flex;
+    justify-content:space-around;
+}
+.possible_a_items{
+
+}
+
+.line{
+    border: solid 5px #ffffff;
+
+}
+.line p{
+    padding:auto;
+}
 .room_name{
     width:20vw;
     text-align: center;
@@ -156,3 +188,4 @@ button a{
     transform: translateY(5px);
     border-bottom: none;
 }
+

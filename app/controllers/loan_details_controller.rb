@@ -1,6 +1,6 @@
 class LoanDetailsController < ApplicationController
   before_action :set_loan_detail, only: %i[ show edit update destroy ]
-  before_action :set_key_masters, only: [:new, :create, :edit, :update]
+  before_action :set_key_masters, only: [:new, :create, :edit, :update, :show, :loan_possible]
   before_action :basic_auth, only: [:index]
 
   def basic_auth
@@ -17,8 +17,7 @@ class LoanDetailsController < ApplicationController
 
   # GET /loan_details/1 or /loan_details/1.json
   def show
-    @loan_detail = LoanDetail.new
-    @loan_detail.key_master_id = params[:key_id]
+    @loan_detail = LoanDetail.find(params[:id])
   end
 
   # GET /loan_details/new
@@ -27,6 +26,10 @@ class LoanDetailsController < ApplicationController
     if params[:key_id].present?
       @loan_detail.key_master_id = params[:key_id]
     end
+  end
+
+  def loan_possible
+
   end
 
   # GET /loan_details/1/edit
