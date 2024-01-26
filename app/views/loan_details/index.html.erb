@@ -5,13 +5,12 @@
 <table class ="design_table table table-hover">
   <thead>
     <tr>
-      <th>key</th>
+      <th>部屋名</th>
       <th>借りた時間</th>
       <th>返した時間</th>
       <th>学年</th>
       <th>組</th>
       <th>名前</th>
-      <th colspan="3">編集</th>
     </tr>
   </thead>
 
@@ -24,10 +23,10 @@
         <td><%= loan_detail.grade %></td>
         <td><%= loan_detail.class_number %></td>
         <td><%= loan_detail.user_name %></td>
-        <td class="index_color"><%= link_to '閲覧', loan_detail %></td>
-        <td class="index_color"><%= link_to '返す', edit_loan_detail_path(loan_detail) %></td>
-        <td><%= button_to '削除', loan_detail, method: :delete, data: { confirm: 'ほんとにいいの?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<button type ="button">
+  <%= link_to 'トップへ戻る', home_top_path %>
+</button>

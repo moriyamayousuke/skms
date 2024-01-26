@@ -34,13 +34,14 @@
 .possible_a{
     display:flex;
     justify-content:space-around;
-}
-.possible_a_items{
 
+}
+.possible_a_items h2{
+    font-weight:bold;
 }
 
 .line{
-    border: solid 5px #ffffff;
+    border: solid 1px #ffffff;
 
 }
 .line p{
